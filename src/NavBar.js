@@ -1,16 +1,20 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { withStyles } from '@material-ui/styles';
-import Button from '@material-ui/core/Button';
 import styles from './styles/NavBarStyles';
 import LoginForm from './LoginForm';
 import SignUpForm from './SignUpForm';
+import logo from './styles/CU-logo-white-fat.svg';
+import NavSlider from './NavSlider';
+import NavDropdown from "./NavDropdown";
+import clsx from 'clsx';
 
 class NavBar extends React.Component {
     constructor(props){
         super(props);
         this.state = {
             loggedIn: false,
+            scroll: false,
         }
         this.showForm = this.showForm.bind(this);
         this.hideForm = this.hideForm.bind(this);
@@ -23,22 +27,26 @@ class NavBar extends React.Component {
     }
     render() {
         const {classes} = this.props;
-        const {loggedIn} = this.state;
+        const {loggedIn, scroll} = this.state;
         return (
-            <div className={classes.root}>
-                <header className={classes.NavBar}>
-                    <div className={classes.logo}>
-                        <Link to='/'>CU</Link>
-                    </div>
-                    {loggedIn 
-                        ? /* Add account photo w/ drop down menu for profile editing*/
-                          <div>You're logged in!</div>
-                        : <div className={classes.navBtns}>
-                            <LoginForm />
-                            <SignUpForm />
-                          </div>
-                    }
-                </header>
+            <div>
+            <header className={classes.NavBar}>
+                <Link to='/'>
+                    <img src={logo} alt="logo" className={classes.logo}>
+                    </img>
+                </Link>
+                <NavSlider classes={{root: classes.insetSlider}} pageChange={this.props.pageChange} location={this.props.location} history={this.props.history}/>
+                <NavDropdown pageChange={this.props.pageChange} location={this.props.location} history={this.props.history}/>
+                {loggedIn 
+                    ? /* Add account photo w/ drop down menu for profile editing*/
+                      <div>You're logged in!</div>
+                    : <div className={classes.navBtns}>
+                        <LoginForm />
+                        <SignUpForm />
+                      </div>
+                }
+            </header>
+                {this.props.children}
             </div>
         )
     }

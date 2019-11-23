@@ -6,7 +6,8 @@ const useStyles = makeStyles((theme: Theme) =>
     button: {
       marginRight: theme.spacing(1),
       color: 'white',
-      borderColor: 'white'
+      borderColor: 'white',
+      whiteSpace: 'nowrap',
     },
     input: {
       display: 'none',

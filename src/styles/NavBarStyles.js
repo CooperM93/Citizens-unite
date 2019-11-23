@@ -1,11 +1,9 @@
-import { borderRadius } from "@material-ui/system";
+import sizes from "./sizes";
 
 export default {
-    root: {
-        width: "100%"
-    },
     NavBar: {
         display: "flex",
+        justifyContent: "space-between",
         alignItems: "center",
         height: "70px",
         width: "100%",
@@ -14,22 +12,27 @@ export default {
     logo: {
         marginRight: "15px",
         padding: "0 13px",
-        fontSize: "30px",
-        fontFamily: "Roboto",
-        height: "100%",
+        height: "50px",
+        width: "50px",
         display: "flex",
         alignItems: "center",
+        justifyContent: "flex-start",
         "& a": {
             textDecoration: "none",
-            color: "black",
         }
     },
     navBtns: {
         alignItems: "center",
-        width: "100%",
         height: "100%",
         display: "flex",
         justifyContent: "flex-end",
+    },
+    insetSlider: {
+        width: "100%",
+        display: "flex",
+        justifyContent: "flex-center",
+        [sizes.down("md")]: {
+            display: "none"
+        }
     }
-
 }
