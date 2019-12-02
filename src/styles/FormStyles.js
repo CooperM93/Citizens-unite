@@ -1,13 +1,18 @@
 
-import { createStyles, makeStyles, Theme } from '@material-ui/core/styles';
+import { createStyles, makeStyles } from '@material-ui/core/styles';
 
-const useStyles = makeStyles((theme: Theme) =>
+const useStyles = makeStyles(theme =>
   createStyles({
     button: {
       marginRight: theme.spacing(1),
-      color: 'white',
+      color: '#9b9e9f',
+      backgroundColor: 'none',
       borderColor: 'white',
       whiteSpace: 'nowrap',
+      transition: "all 5s ease",
+      "& :hover": {
+        color: 'white'
+      }
     },
     input: {
       display: 'none',

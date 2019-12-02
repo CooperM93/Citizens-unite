@@ -2,6 +2,7 @@ import React from 'react';
 import './App.css';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import NavBar from './NavBar';
+import SearchBar from './SearchBar';
 import HomePage from './HomePage';
 import Events from './Events';
 import Discussions from './Discussions';
@@ -28,6 +29,7 @@ class App extends React.Component {
             path="/"
             render={(routeProps) => (
               <NavBar {...routeProps} pageChange={this.pageChange}>
+              <SearchBar />
               <HomePage />
               </NavBar>
             )}

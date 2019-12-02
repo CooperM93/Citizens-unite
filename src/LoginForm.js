@@ -51,7 +51,7 @@ export default function LoginForm(props) {
                     </form>
             </DialogContent>
             <DialogActions>
-                <Button onClick={toggleOpen} color="primary">
+                <Button onClick={toggleOpen} color="secondary">
                 Cancel
                 </Button>
                 <Button onClick={toggleOpen} color="primary">
