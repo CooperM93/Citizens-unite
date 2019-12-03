@@ -9,14 +9,9 @@ class Discussions extends Component {
     render() {
         const { classes } = this.props;
         return (
-            <div className={classes.container}>
-                <div className={classes.disTitleBox}>
-                    <h1 className={classes.title}>Discussions</h1>
-                </div>
                 <div className={classes.content}>
                     <ACard />
                 </div>
-            </div>
         )
     }
 }

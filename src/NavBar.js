@@ -6,6 +6,7 @@ import styles from './styles/NavBarStyles';
 import LoginForm from './LoginForm';
 import SignUpForm from './SignUpForm';
 import ScrollTop from './ScrollTop';
+import TitleBar from './TitleBar';
 import logo from './styles/CU-logo-white-fat.svg';
 import NavSlider from './NavSlider';
 import NavDropdown from "./NavDropdown";
@@ -30,7 +31,7 @@ class NavBar extends React.Component {
         this.setState({ formShowing: false })
     }
     render() {
-        const {classes, children} = this.props;
+        const {classes, children, page} = this.props;
         const {loggedIn, scroll} = this.state;
         return (
             <div>
@@ -51,6 +52,7 @@ class NavBar extends React.Component {
                         </div>
                     }
                 </header>
+                <TitleBar page={page} />
                 <div className={classes.content}>
                     {children}
                 </div>

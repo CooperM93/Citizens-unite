@@ -7,13 +7,8 @@ class Events extends Component {
     render() {
         const { classes } = this.props;
         return (
-            <div className={classes.container}>
-                <div className={classes.evtTitleBox}>
-                    <h1 className={classes.title}>Events</h1>
-                </div>
-                <div className={classes.content}>
-                    <ACard />
-                </div>
+            <div className={classes.content}>
+                <ACard />
             </div>
         )
     }

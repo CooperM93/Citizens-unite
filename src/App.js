@@ -49,7 +49,7 @@ class App extends React.Component {
             exact
             path="/"
             render={(routeProps) => (
-              <NavBar {...routeProps} pageChange={this.pageChange}>
+              <NavBar {...routeProps} pageChange={this.pageChange} page={this.state.page}>
               <SearchBar />
               <HomePage />
               </NavBar>
@@ -59,7 +59,7 @@ class App extends React.Component {
             exact
             path="/discussion"
             render={(routeProps) => (
-              <NavBar {...routeProps} pageChange={this.pageChange}>
+              <NavBar {...routeProps} pageChange={this.pageChange} page={this.state.page}>
               <Discussions />
               </NavBar> 
             )}
@@ -68,7 +68,7 @@ class App extends React.Component {
             exact
             path="/events"
             render={(routeProps) => (
-              <NavBar {...routeProps} pageChange={this.pageChange}> 
+              <NavBar {...routeProps} pageChange={this.pageChange} page={this.state.page}> 
               <Events />
               </NavBar> 
             )}
@@ -77,7 +77,7 @@ class App extends React.Component {
             exact
             path="/fundraising"
             render={(routeProps) => (
-              <NavBar {...routeProps} pageChange={this.pageChange}>
+              <NavBar {...routeProps} pageChange={this.pageChange} page={this.state.page}>
               <Fundraising />
               </NavBar>
             )}

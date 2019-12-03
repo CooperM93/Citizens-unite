@@ -16,19 +16,19 @@ export default function NavSlider(props) {
     //sets the local state to the new page
     setValue(newValue);
     //redirects to the new url selected 
-    props.history.push(newValue);
+    props.history.push(`/${newValue}`);
   };
 
   return (
     <BottomNavigation 
         //determines the current value from the current page url
-        value={props.location.pathname} 
+        value={props.location.pathname.slice(1)} 
         onChange={handleChange} 
         className={classes.root}
     >   
         <BottomNavigationAction 
             label="Discussion" 
-            value="/discussion" 
+            value="discussion" 
             classes={{ 
                 root: classes.icon, 
                 selected: classes.selected 
@@ -39,7 +39,7 @@ export default function NavSlider(props) {
         />
         <BottomNavigationAction 
             label="Events" 
-            value="/events" 
+            value="events" 
             classes={{ 
                 root: classes.icon, 
                 selected: classes.selected 
@@ -50,7 +50,7 @@ export default function NavSlider(props) {
         />
         <BottomNavigationAction 
             label="Fundraising" 
-            value="/fundraising" 
+            value="fundraising" 
             classes={{ 
                 root: classes.icon, 
                 selected: classes.selected 
