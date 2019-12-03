@@ -14,12 +14,16 @@ export default {
         alignItems: "center",
         zIndex: '3',
         marginTop: `-${navOffset}px`,
-        height: "70px",
+        minHeight: `${navOffset}px`,
+        height: 'auto',
         width: "100%",
         backgroundColor: "#181b1c",
+        overflow: 'hidden',
+        marginBottom: 0,
+        boxShadow: "0px 2px 1px -1px rgba(0,0,0,0.2), 0px 1px 1px 0px rgba(0,0,0,0.14), 0px 1px 3px 0px rgba(0,0,0,0.12)",
     },
     logo: {
-        marginRight: "15px",
+        margin: "0px 10px",
         padding: "0 13px",
         height: "70px",
         width: "70px",
@@ -47,9 +51,9 @@ export default {
     scrollTopFab: {
         backgroundColor: "RGBA(24,27,28,0.85)",
         color: "#9b9e9f",
-        "& :hover": {
-            color: "white",
-            backgroundColor: "RGBA(24,27,28,0.85)",
+        "&:hover": {
+            backgroundColor: "RGBA(24,27,28,0.93)",
+            color: "#9b9e9f",
         }
     }
 }

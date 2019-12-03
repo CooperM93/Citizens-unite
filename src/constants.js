@@ -1,1 +1,1 @@
-export const NAV_OFFSET = 90
+export const NAV_OFFSET = 70

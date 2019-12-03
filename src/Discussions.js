@@ -1,11 +1,24 @@
 import React, { Component } from 'react'
+import ACard from './ACard';
+import pageStyles from './styles/pageStyles';
+import { withStyles } from '@material-ui/core/styles';
 
-export default class Discussions extends Component {
+
+
+class Discussions extends Component {
     render() {
+        const { classes } = this.props;
         return (
-            <div>
-                <h1>Discussions</h1>
+            <div className={classes.container}>
+                <div className={classes.disTitleBox}>
+                    <h1 className={classes.title}>Discussions</h1>
+                </div>
+                <div className={classes.content}>
+                    <ACard />
+                </div>
             </div>
         )
     }
 }
+
+export default withStyles(pageStyles)(Discussions);

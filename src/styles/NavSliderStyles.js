@@ -5,6 +5,7 @@ import sizes from './sizes';
 const useStyles = makeStyles({
     root: {
         width: 500,
+        height: 70,
         backgroundColor: "#181b1c",
         [sizes.down("xs")]: {
             display: "none"

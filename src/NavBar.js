@@ -54,14 +54,14 @@ class NavBar extends React.Component {
                 <div className={classes.content}>
                     {children}
                 </div>
-                <ScrollTop {...this.props} classes={{root: classes.scrollTopFab}}>
-                    <Fab  size="small" variant='extended' aria-label="scroll back to top">
+                <ScrollTop {...this.props}>
+                    <Fab classes={{root: classes.scrollTopFab}} size="small" aria-label="scroll back to top">
                         <KeyboardArrowUpIcon />
                     </Fab>
                 </ScrollTop>
             </div>
         )
     }
-}
+    }
 
 export default withStyles(styles)(NavBar);
