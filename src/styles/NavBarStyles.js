@@ -1,11 +1,14 @@
 import sizes from "./sizes";
-import { NAV_OFFSET } from '../constants'
+import { NAV_OFFSET, BAR_WIDTH } from '../constants'
 
 const navOffset = NAV_OFFSET;
+const barWidth = BAR_WIDTH;
 
 export default {
     content: {
+        position: "relative",
         marginTop: `${navOffset}px`,
+        paddingTop: `${barWidth}px`,
     },
     NavBar: {
         display: "flex",
@@ -21,6 +24,13 @@ export default {
         marginBottom: 0,
         boxShadow: "0px 2px 1px -1px rgba(0,0,0,0.2), 0px 1px 1px 0px rgba(0,0,0,0.14), 0px 1px 3px 0px rgba(0,0,0,0.12)",
         justifyContent: 'space-between'
+    },
+    NavTitleBar: {
+        zIndex: '2',
+        position: "fixed",
+        display: "flex",
+        height: "100%",
+        width: "100%"
     },
     NavDropdown: {
         margin: "0px 10px",

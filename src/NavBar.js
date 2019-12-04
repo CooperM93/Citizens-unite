@@ -1,8 +1,6 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import { withStyles } from '@material-ui/styles';
 import CssBaseline from '@material-ui/core/CssBaseline';
-import Button from '@material-ui/core/Button';
 import styles from './styles/NavBarStyles';
 import LoginForm from './LoginForm';
 import SignUpForm from './SignUpForm';
@@ -13,7 +11,6 @@ import NavSlider from './NavSlider';
 import NavDropdown from "./NavDropdown";
 import Fab from '@material-ui/core/Fab';
 import KeyboardArrowUpIcon from '@material-ui/icons/KeyboardArrowUp';
-import clsx from 'clsx';
 
 class NavBar extends React.Component {
     constructor(props){
@@ -61,7 +58,9 @@ class NavBar extends React.Component {
                         </div>
                     }
                 </header>
-                <TitleBar page={page} />
+                <div className={classes.NavTitleBar}>
+                    <TitleBar page={page} />
+                </div>
                 <div className={classes.content}>
                     {children}
                 </div>

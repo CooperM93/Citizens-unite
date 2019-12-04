@@ -19,4 +19,21 @@
     padding-top: 70px;
     transition: all 500ms cubic-bezier(.19,.35,.44,1);
 }
-  
+
+.slide-enter {
+    margin-top: -70px;
+}
+.slide-enter-active {
+    margin-top: 0px;
+    transition: all 500ms cubic-bezier(.19,.35,.44,1);
+}
+.slide-exit {
+    margin-top: 0px;
+}
+.slide-exit-active {
+    margin-top: -70px;
+    transition: all 500ms cubic-bezier(.19,.35,.44,1);
+}
+.slide-exit-done {
+    margin-top: -70px;
+}

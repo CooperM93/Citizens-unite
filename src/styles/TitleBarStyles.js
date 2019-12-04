@@ -1,17 +1,21 @@
 import sizes from "./sizes";
-import { NAV_OFFSET } from '../constants';
+import { NAV_OFFSET, BAR_WIDTH } from '../constants';
 
 const navOffset = NAV_OFFSET;
+const barWidth = BAR_WIDTH;
 
 const TitleBarStyles = theme =>  ({
     container: {
-        marginTop: `${navOffset}px`,
         overflow: 'hidden',
+    },
+    scrolling: {
+        transform: `translate(0, -${barWidth}px)`,
+        transition: 'transform 90ms linear'
     },
     homeTitleBox: {
         color: 'black',
         display: 'flex',
-        height: 70,
+        height: barWidth,
         marginLeft: 0,
         alignItems: 'center',
         padding:"0 20px",
@@ -23,7 +27,7 @@ const TitleBarStyles = theme =>  ({
     disTitleBox: {
         color: 'white',
         display: 'flex',
-        height: 70,
+        height: barWidth,
         marginLeft: 0,
         alignItems: 'center',
         padding:"0 20px",
@@ -33,7 +37,7 @@ const TitleBarStyles = theme =>  ({
     evtTitleBox: {
         color: 'white',
         display: 'flex',
-        height: 70,
+        height: barWidth,
         marginLeft: 0,
         alignItems: 'center',
         padding:"0 20px",
@@ -43,8 +47,7 @@ const TitleBarStyles = theme =>  ({
     fundTitleBox: {
         color: 'white',
         display: 'flex',
-        top: '-70px',
-        height: 70,
+        height: barWidth,
         marginLeft: 0,
         alignItems: 'center',
         padding:"0 20px",
@@ -56,21 +59,6 @@ const TitleBarStyles = theme =>  ({
         fontWeight: 400,
         letterSpacing: '1.5 px',
     },
-    /*itemEnter: {
-        transform: "translate(0px, -100%)"
-    },
-    itemEnterActive: {
-        transform: "translate(0px, 0%)",
-        transition: "transform 500ms ease-in"
-    },
-    itemExit: {
-        transform: "translate(0px, -100%)"
-    },
-    itemExitActive: {
-        transform: "translate(0px, 0px)",
-        transition: "transfrom 500ms ease-in"
-    }
-    */
 });
 
 export default TitleBarStyles;

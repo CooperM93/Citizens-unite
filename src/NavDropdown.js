@@ -6,17 +6,21 @@ import AttachMoneyIcon from '@material-ui/icons/AttachMoney';
 import RestoreIcon from '@material-ui/icons/Restore';
 import LocationOnIcon from '@material-ui/icons/LocationOn';
 import MenuIcon from '@material-ui/icons/Menu';
+import HomeIcon from '@material-ui/icons/Home';
 import {StyledMenu, StyledMenuItem, useStyles} from './styles/NavDropdownStyles';
 
 export default function NavDropdown(props) {
   const [anchorEl, setAnchorEl] = React.useState(null);
   const classes = useStyles();
 
+  const handleOpen = event => {
+    setAnchorEl(event.currentTarget);
+  };
+
   const handleClick = event => {
     const { myValue } = event.currentTarget.dataset;
     console.log(event.currentTarget.dataset);
     props.pageChange(myValue);
-    setAnchorEl(event.currentTarget);
     props.history.push(myValue);
   };
 
@@ -30,7 +34,7 @@ export default function NavDropdown(props) {
         aria-controls="customized-menu"
         aria-haspopup="true"
         variant="contained"
-        onClick={handleClick}
+        onClick={handleOpen}
         classes={{root: classes.button}}
       >
         <MenuIcon />
@@ -44,6 +48,12 @@ export default function NavDropdown(props) {
         onClose={handleClose}
         value={props.location.pathname}
       >
+        <StyledMenuItem onClick={handleClick} data-my-value="">
+            <ListItemIcon classes={{root: classes.icon}}>
+                <HomeIcon />
+            </ListItemIcon>
+            <ListItemText primary="Home" />
+        </StyledMenuItem>
         <StyledMenuItem onClick={handleClick} data-my-value="discussion">
             <ListItemIcon classes={{root: classes.icon}}>
                 <RestoreIcon />
