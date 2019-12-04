@@ -10,7 +10,6 @@ export default {
     NavBar: {
         display: "flex",
         position: "fixed",
-        justifyContent: "space-between",
         alignItems: "center",
         zIndex: '3',
         marginTop: `-${navOffset}px`,
@@ -21,18 +20,38 @@ export default {
         overflow: 'hidden',
         marginBottom: 0,
         boxShadow: "0px 2px 1px -1px rgba(0,0,0,0.2), 0px 1px 1px 0px rgba(0,0,0,0.14), 0px 1px 3px 0px rgba(0,0,0,0.12)",
+        justifyContent: 'space-between'
     },
-    logo: {
+    NavDropdown: {
         margin: "0px 10px",
         padding: "0 13px",
+        alignItems: "center",
+        height: "100%",
+        display: "flex",
+        justifyContent: "flex-start",
+        [sizes.up("xs")]: {
+            display: 'none'
+        }
+    },
+    logoDiv: {
         height: "70px",
         width: "70px",
+        margin: "0px 10px",
+        padding: "0 13px",
         display: "flex",
         alignItems: "center",
         justifyContent: "flex-start",
+        [sizes.down("xs")]: {
+            display: "none"
+        },
         "& a": {
             textDecoration: "none",
         }
+    },
+    logo: {
+        alignItems: "center",
+        height: "45px",
+        width: "45px",
     },
     navBtns: {
         alignItems: "center",

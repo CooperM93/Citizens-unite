@@ -5,6 +5,7 @@ import ListItemText from '@material-ui/core/ListItemText';
 import AttachMoneyIcon from '@material-ui/icons/AttachMoney';
 import RestoreIcon from '@material-ui/icons/Restore';
 import LocationOnIcon from '@material-ui/icons/LocationOn';
+import MenuIcon from '@material-ui/icons/Menu';
 import {StyledMenu, StyledMenuItem, useStyles} from './styles/NavDropdownStyles';
 
 export default function NavDropdown(props) {
@@ -13,7 +14,7 @@ export default function NavDropdown(props) {
 
   const handleClick = event => {
     const { myValue } = event.currentTarget.dataset;
-    console.log(myValue);
+    console.log(event.currentTarget.dataset);
     props.pageChange(myValue);
     setAnchorEl(event.currentTarget);
     props.history.push(myValue);
@@ -32,8 +33,9 @@ export default function NavDropdown(props) {
         onClick={handleClick}
         classes={{root: classes.button}}
       >
-        {props.location.pathname !== '/' ? props.location.pathname.slice(1) : 'Home'}
+        <MenuIcon />
       </Button>
+      
       <StyledMenu
         id="customized-menu"
         anchorEl={anchorEl}
@@ -42,19 +44,19 @@ export default function NavDropdown(props) {
         onClose={handleClose}
         value={props.location.pathname}
       >
-        <StyledMenuItem onClick={handleClick} data-my-value="/discussion">
+        <StyledMenuItem onClick={handleClick} data-my-value="discussion">
             <ListItemIcon classes={{root: classes.icon}}>
                 <RestoreIcon />
             </ListItemIcon>
             <ListItemText primary="Discussion" />
         </StyledMenuItem>
-        <StyledMenuItem onClick={handleClick} data-my-value="/events">
+        <StyledMenuItem onClick={handleClick} data-my-value="events">
             <ListItemIcon classes={{root: classes.icon}}>
                 <LocationOnIcon />
             </ListItemIcon>
             <ListItemText primary="Events" />
         </StyledMenuItem>
-        <StyledMenuItem onClick={handleClick} data-my-value="/fundraising">
+        <StyledMenuItem onClick={handleClick} data-my-value="fundraising">
             <ListItemIcon classes={{root: classes.icon}}>
                 <AttachMoneyIcon />
             </ListItemIcon>

@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { withStyles } from '@material-ui/styles';
 import CssBaseline from '@material-ui/core/CssBaseline';
+import Button from '@material-ui/core/Button';
 import styles from './styles/NavBarStyles';
 import LoginForm from './LoginForm';
 import SignUpForm from './SignUpForm';
@@ -23,6 +24,7 @@ class NavBar extends React.Component {
         }
         this.showForm = this.showForm.bind(this);
         this.hideForm = this.hideForm.bind(this);
+        this.handleClick = this.handleClick.bind(this);
     }
     showForm() {
         this.setState({ formShowing: true })
@@ -30,19 +32,26 @@ class NavBar extends React.Component {
     hideForm() {
         this.setState({ formShowing: false })
     }
+    handleClick() {
+        console.log('clicked');
+        this.props.pageChange('');
+        this.props.history.push('/');
+    };
+    //WORK ON LOGO HOMEPAGE REDIRECT
     render() {
-        const {classes, children, page} = this.props;
+        const {classes, children, page, pageChange } = this.props;
         const {loggedIn, scroll} = this.state;
         return (
             <div>
                 <CssBaseline />
                 <header className={classes.NavBar}>
-                    <Link to='/'>
-                        <img src={logo} alt="logo" className={classes.logo}>
-                        </img>
-                    </Link>
-                    <NavSlider classes={{root: classes.insetSlider}} pageChange={this.props.pageChange} location={this.props.location} history={this.props.history}/>
-                    <NavDropdown pageChange={this.props.pageChange} location={this.props.location} history={this.props.history}/>
+                    <div className={classes.logoDiv}>
+                        <img src={logo} alt="logo" className={classes.logo} onClick={this.handleClick}/>
+                    </div>
+                    <NavSlider classes={{root: classes.insetSlider}} pageChange={pageChange} location={this.props.location} history={this.props.history}/>
+                    <div className={classes.NavDropdown}>
+                        <NavDropdown  pageChange={pageChange} location={this.props.location} history={this.props.history}/>
+                    </div>
                     {loggedIn 
                         ? /* Add account photo w/ drop down menu for profile editing*/
                         <div>You're logged in!</div>

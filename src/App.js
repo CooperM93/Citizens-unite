@@ -1,6 +1,6 @@
 import React from 'react';
 import './App.css';
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Switch, withRouter } from 'react-router-dom';
 import NavBar from './NavBar';
 import SearchBar from './SearchBar';
 import HomePage from './HomePage';
@@ -12,6 +12,7 @@ import Fundraising from './Fundraising';
 TODO: 
   create state for different types of cards
   interface with server (backend)
+  fix the page state for homepage
 
 ColorScheme = Flat UI Colors American 
   grays: { 
@@ -30,10 +31,11 @@ ColorScheme = Flat UI Colors American
   }
 */
 class App extends React.Component {
+
   constructor(props) {
     super(props);
     this.state = {
-      page: 'discussion'
+      page: this.props.location.pathname.slice(1)
     }
     this.pageChange = this.pageChange.bind(this);
   }
@@ -41,7 +43,6 @@ class App extends React.Component {
     this.setState({page: newPage});
   }
   render(routeProps) {
-
     return (
       <Router>
         <Switch>
@@ -88,4 +89,4 @@ class App extends React.Component {
   }
 }
 
-export default App;
+export default withRouter(App);

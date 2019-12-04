@@ -47,25 +47,19 @@ export const StyledMenu = withStyles({
   
 export const useStyles = makeStyles({
     root: {
+        display: "block",
         margin: 'auto',
         width: '100%',
         height: '100%',
         backgroundColor: "#181b1c",
-        display: "block",
         alignContent: "center",
     },
     icon: {
         alignContent: "center",
         color: "#9b9e9f",
-        "&$selected": {
-            color: "white"
-        }
     },
     button: {
         backgroundColor: 'white',
-        [sizes.up("xs")]: {
-            display: 'none'
-        }
     }
     //changes to navslider when screen expands
 });
