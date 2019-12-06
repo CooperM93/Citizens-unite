@@ -1,4 +1,4 @@
-const styles = {
+export default {
     container: {
         margin: 'auto',
         marginTop: '25px',
