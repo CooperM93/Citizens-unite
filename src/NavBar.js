@@ -9,15 +9,12 @@ import TitleBar from './TitleBar';
 import logo from './styles/CU-logo-white-fat.svg';
 import NavSlider from './NavSlider';
 import NavDropdown from "./NavDropdown";
-import Fab from '@material-ui/core/Fab';
-import KeyboardArrowUpIcon from '@material-ui/icons/KeyboardArrowUp';
 
 class NavBar extends React.Component {
     constructor(props){
         super(props);
         this.state = {
             loggedIn: false,
-            scroll: false,
         }
         this.showForm = this.showForm.bind(this);
         this.hideForm = this.hideForm.bind(this);
@@ -34,10 +31,11 @@ class NavBar extends React.Component {
         this.props.pageChange('');
         this.props.history.push('/');
     };
-    //WORK ON LOGO HOMEPAGE REDIRECT
+    //TODO: Find out where pointer-even: none is
+    //Can not select or click on anything below the navBar
     render() {
         const {classes, children, page, pageChange } = this.props;
-        const {loggedIn, scroll} = this.state;
+        const {loggedIn } = this.state;
         return (
             <div>
                 <CssBaseline />
@@ -58,17 +56,13 @@ class NavBar extends React.Component {
                         </div>
                     }
                 </header>
-                <div className={classes.NavTitleBar}>
+                <div className={classes.NavTitleBar} role="banner">
                     <TitleBar page={page} />
                 </div>
                 <div className={classes.content}>
                     {children}
                 </div>
-                <ScrollTop {...this.props}>
-                    <Fab classes={{root: classes.scrollTopFab}} size="small" aria-label="scroll back to top">
-                        <KeyboardArrowUpIcon />
-                    </Fab>
-                </ScrollTop>
+                <ScrollTop {...this.props} />
             </div>
         )
     }

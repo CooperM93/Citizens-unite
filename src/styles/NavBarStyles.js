@@ -1,14 +1,15 @@
 import sizes from "./sizes";
-import { NAV_OFFSET, BAR_WIDTH } from '../constants'
+import { NAV_OFFSET, BAR_HEIGHT } from '../constants'
 
 const navOffset = NAV_OFFSET;
-const barWidth = BAR_WIDTH;
+const barHeight = BAR_HEIGHT;
 
 export default {
     content: {
         position: "relative",
         marginTop: `${navOffset}px`,
-        paddingTop: `${barWidth}px`,
+        paddingTop: `${barHeight}px`,
+        pointerEvents: 'auto',
     },
     NavBar: {
         display: "flex",
@@ -29,7 +30,7 @@ export default {
         zIndex: '2',
         position: "fixed",
         display: "flex",
-        height: "100%",
+        height: barHeight,
         width: "100%"
     },
     NavDropdown: {
@@ -77,12 +78,4 @@ export default {
             display: "none"
         }
     },
-    scrollTopFab: {
-        backgroundColor: "RGBA(24,27,28,0.85)",
-        color: "#9b9e9f",
-        "&:hover": {
-            backgroundColor: "RGBA(24,27,28,0.93)",
-            color: "#9b9e9f",
-        }
-    }
 }

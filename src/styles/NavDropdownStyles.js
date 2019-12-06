@@ -3,7 +3,6 @@ import Menu from '@material-ui/core/Menu';
 import MenuItem from '@material-ui/core/MenuItem';
 import { withStyles } from '@material-ui/core/styles';
 import { makeStyles } from '@material-ui/core/styles';
-import sizes from './sizes';
 
 
 export const StyledMenu = withStyles({

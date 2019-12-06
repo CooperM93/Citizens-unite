@@ -57,8 +57,7 @@ class SearchBar extends Component {
                     [classes.minimized]: !expanded,
                     [classes.scrolling]: scroll
                 })} 
-                style={{
-                }}>
+            >
                 <ClickAwayListener onClickAway={this.handleClickAway}>
                     <Paper component="form" className={classes.root}>
                         <IconButton className={classes.iconButton} aria-label="filter">

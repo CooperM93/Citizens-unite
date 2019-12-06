@@ -5,6 +5,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  pointer-events: auto;
 }
 
 code {
@@ -19,5 +20,6 @@ code {
   font-size: 100%;
   vertical-align: baseline;
   background: transparent;
+  pointer-events: auto;
 }
 ::-webkit-scrollbar {display:none;}

@@ -1,21 +1,20 @@
-import sizes from "./sizes";
-import { NAV_OFFSET, BAR_WIDTH } from '../constants';
 
-const navOffset = NAV_OFFSET;
-const barWidth = BAR_WIDTH;
+import { BAR_HEIGHT } from '../constants';
+
+const barHeight = BAR_HEIGHT;
 
 const TitleBarStyles = theme =>  ({
     container: {
         overflow: 'hidden',
     },
     scrolling: {
-        transform: `translate(0, -${barWidth}px)`,
+        transform: `translate(0, -${barHeight}px)`,
         transition: 'transform 90ms linear'
     },
     homeTitleBox: {
         color: 'black',
         display: 'flex',
-        height: barWidth,
+        height: barHeight,
         marginLeft: 0,
         alignItems: 'center',
         padding:"0 20px",
@@ -27,31 +26,28 @@ const TitleBarStyles = theme =>  ({
     disTitleBox: {
         color: 'white',
         display: 'flex',
-        height: barWidth,
+        height: barHeight,
         marginLeft: 0,
         alignItems: 'center',
         padding:"0 20px",
-        background:" rgb(92,91,182)",
         background: "linear-gradient(348deg, rgba(92,91,182,1) 0%, rgba(205,43,44,1) 51%, rgba(216,105,78,1) 100%)",
     },
     evtTitleBox: {
         color: 'white',
         display: 'flex',
-        height: barWidth,
+        height: barHeight,
         marginLeft: 0,
         alignItems: 'center',
         padding:"0 20px",
-        background:" rgb(92,91,182)",
         background: "linear-gradient(108deg, rgba(92,91,182,1) 0%, rgba(205,43,44,1) 51%, rgba(216,105,78,1) 100%)",
     },
     fundTitleBox: {
         color: 'white',
         display: 'flex',
-        height: barWidth,
+        height: barHeight,
         marginLeft: 0,
         alignItems: 'center',
         padding:"0 20px",
-        background:" rgb(92,91,182)",
         background: "linear-gradient(228deg, rgba(92,91,182,1) 0%, rgba(205,43,44,1) 51%, rgba(216,105,78,1) 100%)",
     },
     title: {

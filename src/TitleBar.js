@@ -1,9 +1,8 @@
-import React, { Component } from 'react'
+import React from 'react'
 import TitleBarStyles from './styles/TitleBarStyles';
 import Transition from './Transition';
 import HideOnScroll from './HideOnScroll';
 import { withStyles } from '@material-ui/styles';
-import clsx from 'clsx';
 import { CSSTransition, TransitionGroup } from 'react-transition-group';
 
 //create a function to hide titlebar when you scroll down
@@ -15,8 +14,7 @@ function TitleBar(props) {
             {page === '' &&
                 <CSSTransition key={0} classNames="item" timeout={500}>
                     <Transition>
-                    <div className={classes.homeTitleBox}>
-                        <h1 className={classes.title}></h1>
+                    <div className={classes.homeTitleBox} aria-label="Home">
                     </div>
                     </Transition>
                 </CSSTransition>

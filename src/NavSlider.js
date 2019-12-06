@@ -8,13 +8,10 @@ import useStyles from './styles/NavSliderStyles';
 
 export default function NavSlider(props) {
   const classes = useStyles();
-  const [value, setValue] = React.useState("");
 
   const handleChange = (e, newValue) => {
     //pushes the new page to app.js and sets the state their
     props.pageChange(newValue);
-    //sets the local state to the new page
-    setValue(newValue);
     //redirects to the new url selected 
     props.history.push(`/${newValue}`);
   };

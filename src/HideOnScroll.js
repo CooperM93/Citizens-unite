@@ -1,6 +1,5 @@
 import React from 'react';
 import useScrollTrigger from '@material-ui/core/useScrollTrigger';
-import Slide from '@material-ui/core/Slide';
 import { CSSTransition } from 'react-transition-group';
 import './styles/transitionStyles.css';
 

@@ -17,18 +17,18 @@ export default {
     expanded: {
       width: '100%',
       justifyContent: 'center',
-      transition: 'all 90ms linear',
+      transition: 'all 100ms linear',
       transform: `translate(350, 0)`,
     },
     minimized: {
       alignItems: 'center',
       justifyContent: `flex-start`,
-      transition: 'transform 90ms linear',
+      transition: 'transform 100ms linear',
       marginLeft: '-350px',
     },
     scrolling: {
-      transform: `translate(0, -70px)`,
-      transition: 'transform 90ms linear',
+      transform: `translate(0, -120px)`,
+      transition: 'transform 500ms linear',
     },
     root: {
         padding: '2px 4px',
