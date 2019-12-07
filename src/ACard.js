@@ -15,10 +15,10 @@ import FavoriteIcon from '@material-ui/icons/Favorite';
 import ShareIcon from '@material-ui/icons/Share';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import MoreVertIcon from '@material-ui/icons/MoreVert';
-import imgUrl from './imgs/Courts.png'
 import ProgressBar from './ProgressBar';
 //Must figure out how to work with media without specifying import
 //  Maybe a way to work with it when imported from back-end
+//Change the date to display the Date.now()/props.created in a readable form
 
 const useStyles = makeStyles(theme => ({
   card: {
@@ -50,7 +50,8 @@ export default function ACard(props) {
     cardUser, 
     cardType, 
     cardTitle, 
-    imgTitle, 
+    imgTitle,
+    imgUrl, 
     cardSummary, 
     cardContent, 
     fundingGoal, 
@@ -78,7 +79,7 @@ export default function ACard(props) {
       />
       <CardMedia
         className={classes.media}
-        image={imgUrl}
+        image={props.imgUrl}
         title={imgTitle}
       />
       <CardContent>

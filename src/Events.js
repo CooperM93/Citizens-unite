@@ -3,12 +3,25 @@ import pageStyles from './styles/pageStyles';
 import ACard from './ACard';
 import { withStyles } from '@material-ui/core/styles';
 
+//Fix imgUrl and ACard img prop
 class Events extends Component {
+    constructor(props){
+        super(props)
+        this.state = {
+            eventCards: [],
+        }
+    }
+    componentDidMount(){
+        this.setState({ eventCards: this.props.seedCards.filter(seedCard => seedCard.cardType === 'event')})
+    }
     render() {
         const { classes } = this.props;
+        const { eventCards } = this.state;
         return (
             <div className={classes.content}>
-                <ACard />
+                {eventCards.map((card, i)  => 
+                    <ACard card={card} key={i} imgUrl={"https://upload.wikime'dia.org/wikipedia/commons/a/a6/The_Rim_Fire_in_the_Stanislaus_National_Forest_near_in_California_began_on_Aug._17%2C_2013-0004.jpg"}/>
+                )}
             </div>
         )
     }

@@ -2,7 +2,6 @@ import React, { Component } from 'react'
 import pageStyles from './styles/pageStyles';
 import ACard from './ACard';
 import { withStyles } from '@material-ui/core/styles';
-import seedCards from './seedCards';
 
 class Fundraising extends Component {
     constructor(props){
@@ -12,7 +11,7 @@ class Fundraising extends Component {
         }
     }
     componentDidMount(){
-        this.setState({ fundraisingCards: seedCards.filter(seedCard => seedCard.cardType === 'fundraising')})
+        this.setState({ fundraisingCards: this.props.seedCards.filter(seedCard => seedCard.cardType === 'fundraising')})
     }
     render() {
         const { classes } = this.props;
@@ -20,7 +19,7 @@ class Fundraising extends Component {
         return (
             <div className={classes.content}>
                 {fundraisingCards.map((card, i)  => 
-                    <ACard card={card} key={i} />
+                    <ACard card={card} key={i} imgUrl={'https://media.defense.gov/2019/Nov/15/2002211441/-1/-1/0/191114-F-ZF730-0006.JPG'}/>
                 )}
             </div>
         )

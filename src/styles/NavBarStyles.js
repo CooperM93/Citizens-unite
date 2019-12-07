@@ -30,7 +30,6 @@ export default {
         zIndex: '2',
         position: "fixed",
         display: "flex",
-        height: barHeight,
         width: "100%"
     },
     NavDropdown: {

@@ -1,6 +1,7 @@
-import React from 'react';
+ import React from 'react';
 import './App.css';
 import { BrowserRouter as Router, Route, Switch, withRouter } from 'react-router-dom';
+import seedCards from './seedCards';
 import NavBar from './NavBar';
 import SearchBar from './SearchBar';
 import HomePage from './HomePage';
@@ -61,7 +62,7 @@ class App extends React.Component {
             path="/discussion"
             render={(routeProps) => (
               <NavBar {...routeProps} pageChange={this.pageChange} page={this.state.page}>
-              <Discussions />
+              <Discussions seedCards={seedCards}/>
               </NavBar> 
             )}
           />
@@ -70,7 +71,7 @@ class App extends React.Component {
             path="/events"
             render={(routeProps) => (
               <NavBar {...routeProps} pageChange={this.pageChange} page={this.state.page}> 
-              <Events />
+              <Events seedCards={seedCards}/>
               </NavBar> 
             )}
           />
@@ -79,7 +80,7 @@ class App extends React.Component {
             path="/fundraising"
             render={(routeProps) => (
               <NavBar {...routeProps} pageChange={this.pageChange} page={this.state.page}>
-              <Fundraising />
+              <Fundraising seedCards={seedCards}/>
               </NavBar>
             )}
           />

@@ -1,15 +1,12 @@
-import React, { Component, useState } from 'react'
+import React, { useState } from 'react'
 import { withStyles } from '@material-ui/styles';
 import styles from './styles/ProgressBarStyles';
 
-const styledBy = (progress, mapping) => props => mapping[props[progress]];
-const array100 = new Array(100);
+//Clean up unused code
+//!! add Tooltip to show how much raised out of goal
 
 
 function ProgressBar(props){
-    /*console.log(array100.map((num, i) => {
-        i: `${i}%`;
-    }))*/
     const [progress, setProgress] = useState(props.raised ? props.raised / props.goal : 0)
     const [complete, setComplete] = useState(progress === 1 ? true : false)
     const { classes } = props;
