@@ -19,7 +19,7 @@ class Fundraising extends Component {
         return (
             <div className={classes.content}>
                 {fundraisingCards.map((card, i)  => 
-                    <ACard card={card} key={i} imgUrl={'https://media.defense.gov/2019/Nov/15/2002211441/-1/-1/0/191114-F-ZF730-0006.JPG'}/>
+                    <ACard card={card} key={i} />
                 )}
             </div>
         )

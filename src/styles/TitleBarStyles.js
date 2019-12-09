@@ -10,7 +10,7 @@ const TitleBarStyles = theme =>  ({
     scrolling: {
         transform: `translate(0, -${barHeight}px)`,
         transition: 'transform 90ms linear'
-    },
+    }, 
     homeTitleBox: {
         color: 'black',
         display: 'flex',

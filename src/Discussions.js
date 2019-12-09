@@ -21,7 +21,7 @@ class Discussions extends Component {
         return (
                 <div className={classes.content} >
                     {disCards.map((card, i)  => 
-                        <ACard card={card} key={i} imgUrl={"https://unsplash.com/photos/_fYBsiQzMHI"}/>
+                        <ACard card={card} key={i}/>
                 )}
                 </div>
         )

@@ -20,7 +20,7 @@ class Events extends Component {
         return (
             <div className={classes.content}>
                 {eventCards.map((card, i)  => 
-                    <ACard card={card} key={i} imgUrl={"https://upload.wikime'dia.org/wikipedia/commons/a/a6/The_Rim_Fire_in_the_Stanislaus_National_Forest_near_in_California_began_on_Aug._17%2C_2013-0004.jpg"}/>
+                    <ACard card={card} key={i} />
                 )}
             </div>
         )
