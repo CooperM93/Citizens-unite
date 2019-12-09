@@ -14,10 +14,10 @@
     transition: transform 500ms cubic-bezier(.19,.35,.44,1);
 }
 .item-exit {
-    padding-top: 0px;
+    height: 70px;
 }
 .item-exit-active {
-    padding-top: 70px;
+    height: 0px;
     transition: all 500ms cubic-bezier(.19,.35,.44,1);
 }
 

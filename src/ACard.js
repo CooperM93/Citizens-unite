@@ -21,11 +21,16 @@ import ProgressBar from './ProgressBar';
 
 const styles = theme => ({
   card: {
-    maxWidth: 345,
+    width: '100%',
+    margin: '10px 0px',
+    backgroundColor: 'RGB(24,27,28)',
+    color: 'white'
   },
   media: {
-    height: 200,
+    overflow:"hidden",
+    height: 100,
     paddingTop: '56.25%', // 16:9
+    backgroundSize: 'cover'
   },
   expand: {
     transform: 'rotate(0deg)',
@@ -40,6 +45,9 @@ const styles = theme => ({
   avatar: {
     backgroundColor: red[500],
   },
+  subheader: {
+    color: 'rgba(155, 158, 159, 1)'
+  }
 });
 
 class ACard extends React.Component {
@@ -74,17 +82,18 @@ class ACard extends React.Component {
       <Card className={classes.card}>
         <CardHeader
           avatar={
-            <Avatar aria-label="recipe" className={classes.avatar}>
+            <Avatar aria-label="avatar" className={classes.avatar}>
               {cardUser.slice(0,1)}
             </Avatar>
           }
           action={
-            <IconButton aria-label="settings">
+            <IconButton aria-label="settings" color='inherit'>
               <MoreVertIcon />
             </IconButton>
           }
           title={cardTitle}
           subheader="September 14, 2016"
+          classes={{subheader: classes.subheader}}
         />
         <CardMedia
           className={classes.media}
@@ -93,16 +102,16 @@ class ACard extends React.Component {
           title={imgTitle}
         />
         <CardContent>
-          <Typography variant="body2" color="textSecondary" component="p">
+          <Typography variant="body2" color="inherit" component="p">
             {cardSummary}  
           </Typography>
           {cardType === 'fundraising' && <ProgressBar goal={fundingGoal} raised={fundingRaised}/>}
         </CardContent>
         <CardActions disableSpacing>
-          <IconButton aria-label="add to favorites">
+          <IconButton aria-label="add to favorites" color='inherit'>
             <FavoriteIcon />
           </IconButton>
-          <IconButton aria-label="share">
+          <IconButton aria-label="share" color='inherit'>
             <ShareIcon />
           </IconButton>
           <IconButton
@@ -112,6 +121,7 @@ class ACard extends React.Component {
             onClick={this.handleExpandClick}
             aria-expanded={expanded}
             aria-label="show more"
+            color='inherit'
           >
             <ExpandMoreIcon />
           </IconButton>

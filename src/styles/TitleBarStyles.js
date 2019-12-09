@@ -6,6 +6,8 @@ const barHeight = BAR_HEIGHT;
 const TitleBarStyles = theme =>  ({
     container: {
         overflow: 'hidden',
+        height: '70px',
+        width: '100%'
     },
     scrolling: {
         transform: `translate(0, -${barHeight}px)`,
@@ -18,7 +20,7 @@ const TitleBarStyles = theme =>  ({
         marginLeft: 0,
         alignItems: 'center',
         padding:"0 20px",
-        backgroundImage: `url(` + require('../imgs/us-cap-cropped.png') + `), linear-gradient(348deg, rgba(92,91,182,1) 0%, rgba(205,43,44,1) 51%, rgba(216,105,78,1) 100%)`,
+        backgroundImage: `url('./imgs/us-cap-cropped.png'), linear-gradient(348deg, rgba(92,91,182,1) 0%, rgba(205,43,44,1) 51%, rgba(216,105,78,1) 100%)`,
         backgroundSize: '100%',
         backgroundPosition: 'left center',
         backgroundRepeat: 'no-repeat',

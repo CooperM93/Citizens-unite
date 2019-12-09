@@ -38,7 +38,6 @@ class NavBar extends React.Component {
         const {loggedIn } = this.state;
         return (
             <div>
-                <CssBaseline />
                 <header className={classes.NavBar}>
                     <div className={classes.logoDiv}>
                         <img src={logo} alt="logo" className={classes.logo} onClick={this.handleClick}/>

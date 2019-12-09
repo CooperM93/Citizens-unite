@@ -9,10 +9,12 @@ const pageStyles = theme =>  ({
     },
     content: {
         pointerEvents: 'auto',
-        display: "flex",
-        justifyContent: "center",
+        display: "inline-flex",
         alignItems: "center",
-        marginTop: '20px'
+        alignContent: "center",
+        marginTop: '20px',
+        flexDirection: 'row',
+        flexWrap: 'wrap',
     },
 });
 
