@@ -22,14 +22,49 @@ import ProgressBar from './ProgressBar';
 const styles = theme => ({
   card: {
     width: '100%',
+    maxWidth: '750px',
     margin: '10px 0px',
-    backgroundColor: 'RGB(24,27,28)',
-    color: 'white'
+    backgroundColor: 'RGB(32,37,38)',
+    color: 'white',
+  },
+  header:{
+    display: 'flex',
+    justifyContent: 'space-between'
+  },
+  title: {
+    fontSize: '1.5rem'
+  },
+  subheader: {
+    flexDirection: 'column',
+    color: 'rgba(155, 158, 159, 1)',
+    padding: '16px',
+    alignItems: 'center',
+    justifyContent: 'flex-end'
+  },
+  cardUser: {
+    lineHeight: 1,
+    fontSize: '.9rem',
+  },
+  created: {
+    lineHeight: 1.5,
+    fontSize: '.8rem'
+  },
+  content: {
+    display: 'flex',
+    justifyContent: 'space-between'
+  },
+  cardSummary: {
+    maxWidth: '300px'
+  },
+  ProgressBar: {
+    justifyContent: 'center',
+    alignItems: 'center'
   },
   media: {
+    alignItems: 'center',
     overflow:"hidden",
-    height: 100,
-    paddingTop: '56.25%', // 16:9
+    width: 160, // 16:9
+    height: 90,
     backgroundSize: 'cover'
   },
   expand: {
@@ -45,9 +80,7 @@ const styles = theme => ({
   avatar: {
     backgroundColor: red[500],
   },
-  subheader: {
-    color: 'rgba(155, 158, 159, 1)'
-  }
+
 });
 
 class ACard extends React.Component {
@@ -72,6 +105,7 @@ class ACard extends React.Component {
       cardContent, 
       fundingGoal, 
       fundingRaised,
+      created
     } = this.props.card;
     const { classes } = this.props;
     const {
@@ -80,34 +114,36 @@ class ACard extends React.Component {
 
     return (
       <Card className={classes.card}>
-        <CardHeader
-          avatar={
-            <Avatar aria-label="avatar" className={classes.avatar}>
-              {cardUser.slice(0,1)}
-            </Avatar>
-          }
-          action={
-            <IconButton aria-label="settings" color='inherit'>
-              <MoreVertIcon />
-            </IconButton>
-          }
-          title={cardTitle}
-          subheader="September 14, 2016"
-          classes={{subheader: classes.subheader}}
-        />
-        <CardMedia
-          className={classes.media}
-          wide
-          image={imgUrl}
-          title={imgTitle}
-        />
-        <CardContent>
-          <Typography variant="body2" color="inherit" component="p">
-            {cardSummary}  
-          </Typography>
-          {cardType === 'fundraising' && <ProgressBar goal={fundingGoal} raised={fundingRaised}/>}
+        <div className={classes.header}>
+          <CardHeader
+            title={cardTitle}
+            classes={{title: classes.title}}
+          />
+          <div className={classes.subheader}>
+          <Typography variant='subtitle1' className={classes.cardUser}>Posted by {cardUser}</Typography>
+          <Typography variant='subtitle2' className={classes.created}>on {created}</Typography>
+          </div>
+        </div>
+        <CardContent className={classes.content}>
+          <div className={classes.cardSummary}>
+            <Typography variant="body2" color="inherit" component="p">
+              {cardSummary} 
+            </Typography>
+            {cardType === 'fundraising' && <ProgressBar className={classes.ProgressBar} goal={fundingGoal} raised={fundingRaised}/>}
+          </div>
+          
+          <CardMedia
+            className={classes.media}
+            wide
+            image={imgUrl}
+            title={imgTitle}
+          />
         </CardContent>
+
         <CardActions disableSpacing>
+          <IconButton aria-label="settings" color='inherit'>
+              <MoreVertIcon />
+          </IconButton>
           <IconButton aria-label="add to favorites" color='inherit'>
             <FavoriteIcon />
           </IconButton>

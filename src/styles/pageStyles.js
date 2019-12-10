@@ -11,6 +11,7 @@ const pageStyles = theme =>  ({
         pointerEvents: 'auto',
         display: "inline-flex",
         alignItems: "center",
+        justifyContent: 'center',
         alignContent: "center",
         marginTop: '20px',
         flexDirection: 'row',

@@ -52,7 +52,6 @@ class App extends React.Component {
             path="/"
             render={(routeProps) => (
               <NavBar {...routeProps} pageChange={this.pageChange} page={this.state.page}>
-              <SearchBar />
               <HomePage />
               </NavBar>
             )}

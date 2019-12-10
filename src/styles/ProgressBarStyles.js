@@ -1,11 +1,15 @@
+import { PROGRESS_BAR_HEIGHT } from '../constants.js';
+
+const progressBarHeight = PROGRESS_BAR_HEIGHT;
+
 export default {
-    container: {
+    ProgressBarContainer: {
         margin: 'auto',
         marginTop: '25px',
         justifyContent: 'flex-center',
         alignContent: 'center',
         width: '80%',
-        height: '10px',
+        height: progressBarHeight,
         backgroundColor: 'RGB(24,27,28)',
         borderRadius: '5px',
         overflow: 'hidden',

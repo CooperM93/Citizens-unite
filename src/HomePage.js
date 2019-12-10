@@ -11,6 +11,10 @@ const styles = {
         fontSize: 'calc(5vw + 30px)',
         paddingBottom: '30px',
     },
+    h1: {
+        WebkitBackgroundClip: 'text',
+        background: 'linear-gradient(208deg, rgba(205,43,44,1) 0%, rgba(255,255,255,1) 100%)'
+    },
     sectionText: {
         fontWeight: '400',
         fontSize: 'calc(4vw + 25px)',
@@ -26,7 +30,7 @@ class HomePage extends Component {
         const { classes } = this.props;
         return (
             <div className={classes.HomePage}>
-                <Typography variant="h1" align='center' className={classes.title}>Citizens Unite</Typography>
+                <Typography variant="h1" align='center' classes={{h1: classes.h1}} className={classes.title}>Citizens Unite</Typography>
                     <Typography variant="body1" className={classes.body}><p>What is Lorem Ipsum?
                     Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
                     </p>
