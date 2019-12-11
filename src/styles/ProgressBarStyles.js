@@ -4,14 +4,14 @@ const progressBarHeight = PROGRESS_BAR_HEIGHT;
 
 export default {
     ProgressBarContainer: {
-        margin: 'auto',
-        marginTop: '25px',
+        margin: '0',
+        marginTop: '15px',
         justifyContent: 'flex-center',
         alignContent: 'center',
-        width: '80%',
+        width: '100%',
         height: progressBarHeight,
-        backgroundColor: 'RGB(24,27,28)',
-        borderRadius: '5px',
+        backgroundColor: 'RGB(224,226,226)',
+        borderRadius: progressBarHeight/2,
         overflow: 'hidden',
     },
     fill: {

@@ -1,6 +1,5 @@
 import React from 'react';
 import { withStyles } from '@material-ui/styles';
-import CssBaseline from '@material-ui/core/CssBaseline';
 import styles from './styles/NavBarStyles';
 import LoginForm from './LoginForm';
 import SignUpForm from './SignUpForm';

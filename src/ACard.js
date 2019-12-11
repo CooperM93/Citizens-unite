@@ -7,7 +7,6 @@ import CardMedia from '@material-ui/core/CardMedia';
 import CardContent from '@material-ui/core/CardContent';
 import CardActions from '@material-ui/core/CardActions';
 import Collapse from '@material-ui/core/Collapse';
-import Avatar from '@material-ui/core/Avatar';
 import IconButton from '@material-ui/core/IconButton';
 import Typography from '@material-ui/core/Typography';
 import { red } from '@material-ui/core/colors';
@@ -53,10 +52,16 @@ const styles = theme => ({
     display: 'flex',
     justifyContent: 'space-between'
   },
+  main: {
+    display: 'block',
+  },
   cardSummary: {
-    maxWidth: '300px'
+    maxWidth: '500px',
+    paddingRight: '24px'
   },
   ProgressBar: {
+    maxWidth: '300px',
+    padding: '10px',
     justifyContent: 'center',
     alignItems: 'center'
   },
@@ -111,7 +116,11 @@ class ACard extends React.Component {
     const {
       expanded
     } = this.state
-
+    const dateCreated = Date(created);
+    const weekdaydayCreated = dateCreated.slice(0,3);
+    const monthCreated = dateCreated.slice(4,7);
+    const dayCreated = dateCreated.slice(8,10);
+    const yearCreated = dateCreated.slice(11, 15);
     return (
       <Card className={classes.card}>
         <div className={classes.header}>
@@ -121,20 +130,20 @@ class ACard extends React.Component {
           />
           <div className={classes.subheader}>
           <Typography variant='subtitle1' className={classes.cardUser}>Posted by {cardUser}</Typography>
-          <Typography variant='subtitle2' className={classes.created}>on {created}</Typography>
+          <Typography variant='subtitle2' className={classes.created}>on {monthCreated} {dayCreated}, {yearCreated}</Typography>
           </div>
         </div>
         <CardContent className={classes.content}>
-          <div className={classes.cardSummary}>
-            <Typography variant="body2" color="inherit" component="p">
-              {cardSummary} 
-            </Typography>
-            {cardType === 'fundraising' && <ProgressBar className={classes.ProgressBar} goal={fundingGoal} raised={fundingRaised}/>}
+          <div className={classes.main}>
+            <div className={classes.cardSummary}>
+              <Typography variant="body2" color="inherit" component="p">
+                {cardSummary} 
+              </Typography>   
+            </div>
+            {cardType === 'fundraising' && <div className={classes.ProgressBar}><ProgressBar goal={fundingGoal} raised={fundingRaised}/></div>}
           </div>
-          
           <CardMedia
             className={classes.media}
-            wide
             image={imgUrl}
             title={imgTitle}
           />

@@ -1,6 +1,4 @@
-import { PROGRESS_BAR_HEIGHT } from '../constants.js';
 
-const progressBarHeight = PROGRESS_BAR_HEIGHT;
 
 export default {
     referencePoint: {
@@ -8,26 +6,29 @@ export default {
     },
     container: {
         position: 'absolute',
+        top: '4px',
         display: 'flex',
         flexDirection: 'column',
         justifyContent: 'center',
         alignItems: 'center',
+        justifySelf: 'left'
     },
     Tooltip: {
+        marginLeft: '-100%',
         width: 0,
         height: 0,
-        //offset below bar
-        // off set for size of arrow to center it
         borderLeft: '6px solid transparent',
-        borderBottom: '6px solid gray',
+        borderBottom: '6px solid RGB(224,226,226)',
         borderRight: '6px solid transparent',
         zIndex: 5,
     },
     TooltipBox: {
         //offset = height of arrow + padding
-        fontSize: '8px',
-        padding: '3px',
-        backgroundColor: 'gray',
+        marginLeft: '-100%',
+        fontSize: '12px',
+        color: 'RGB(24,27,28)',
+        padding: '5px',
+        backgroundColor: 'RGB(224,226,226)',
         borderRadius: '6px',
     }
 }

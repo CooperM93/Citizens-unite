@@ -23,7 +23,6 @@ const useStyles = makeStyles(theme => ({
 
 export default function ScrollTop(props) {
   const classes = useStyles();
-  console.log(Date.now())
   // Note that you normally won't need to set the window ref as useScrollTrigger
   // will default to window.
   // This is only being set here because the demo is in an iframe.
@@ -33,7 +32,6 @@ export default function ScrollTop(props) {
   });
 
   const handleClick = event => {
-    console.log('scrolltotopclicked')
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 

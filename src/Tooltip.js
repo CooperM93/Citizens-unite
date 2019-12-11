@@ -1,7 +1,6 @@
 import React from 'react';
 import { withStyles } from '@material-ui/styles';
 import styles from './styles/TooltipStyles'
-import { classExpression } from '@babel/types';
 
 //TODO fix tooltip positioning to center on progress bar end
 function Tooltip(props) {
@@ -12,7 +11,7 @@ function Tooltip(props) {
                 <div className={classes.container} >
                     <span className={classes.Tooltip}/>
                 
-                    <span className={classes.TooltipBox}>{raised}/{goal}</span>
+                    <span className={classes.TooltipBox}>${raised}/${goal}</span>
  
             </div>
         </div>
