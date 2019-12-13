@@ -1,46 +1,69 @@
 import sizes from './sizes';
+import bg from './CU-logo-mnml.png'
 
 export default {
     HomePage: {
-        padding: '30px'
+        padding: '32px',
     },
     title: {
         fontWeight: '500',
         fontSize: 'calc(5vw + 30px)',
-        paddingBottom: '30px',
-    },
-    h1: {
-        WebkitBackgroundClip: 'text',
-        background: 'linear-gradient(208deg, rgba(205,43,44,1) 0%, rgba(255,255,255,1) 100%)'
-    },
-    sectionText: {
-        fontWeight: '400',
-        fontSize: 'calc(4vw + 25px)',
-        marginTop: '30px',
+        paddingBottom: '32px',
     },
     subheader: {
-        marginBottom: '30px'
+        marginBottom: '32px',
+        maxWidth: '1000px',
+        width: '80%'
     },
-    sections: {
+    titleAndSubheader: {
+        display: 'flex',
+        flexDirection: 'column',
+        justifyContent: 'center',
+        alignItems: 'center',
+        //backgroundImage: `url(${bg})`,
+        //backgroundSize: '40px 40px',
+    },
+    sectionHeader: {
+        fontWeight: '400',
+        fontSize: 'calc(4vw + 25px)',
+        paddingTop: '32px',
+    },
+    body: {
+        display: 'flex',
         alignItems: 'center',
         justifyContent: 'center',
-        margin: 'auto'
+        margin: 'auto',
+        maxWidth: '1200px',
+        flexDirection: 'column',
+        [sizes.up("xs")]: {
+            width: '80%',
+        }
     },
-    section1: {
-        alignSelf: 'left',
+    section: {
         display: 'flex',
         flexDirection: 'row',
-        justifyContent: 'space-between'
+        alignItems: 'center',
+        justifyContent: 'space-between',
+        padding: '64px',
+        width: '100%',
+        [sizes.down("xs")]: {
+            justifyContent: 'center',
+        }
     },
-    section2: {
-        display: 'flex',
-        flexDirection: 'row',
-        justifyContent: 'space-between'
+    one: {
+        //red gradient
+        background: 'rgb(135,0,0)',
+        background: 'linear-gradient(208deg, rgba(238,126,112,.9) 0%, rgba(223,78,69,1) 100%)',
     },
-    section3: {
-        display: 'flex',
-        flexDirection: 'row',
-        justifyContent: 'space-between'
+    two: {
+        //green gradient
+        background: 'rgb(66,192,159)',
+        background: 'linear-gradient(208deg, rgba(123,209,182,.9) 0%, rgba(0,116,85,1) 100%)',
+    },
+    three: {
+        //purple gradient
+        background: 'RGB(174, 166, 254)',
+        background: 'linear-gradient(208deg, rgba(196,187,255,.9) 0%, RGB( 92, 91, 181) 100%)',
     },
     headerAndButton: {
         display: 'flex',
@@ -49,32 +72,38 @@ export default {
         alignItems: 'center',
         minWidth: '300px'
     },
-    bodyHeader: {
-        maxWidth: '300px',
-    },
-    bodyRight:{
-        [sizes.down("sm")]: {
+    sectionBodyRight:{
+        [sizes.down("xs")]: {
             display: 'none'
         },
         marginBottom: '30px',
-        maxWidth: '500px',
+        [sizes.down("md")]: {
+            maxWidth: '325px',
+        },
+        maxWidth: '525px'
     },
-    bodyUnder: {
-        [sizes.up("sm")]: {
+    sectionBodyUnder: {
+        [sizes.up("xs")]: {
             display: 'none'
         },
-        marginBottom: '30px',
+        marginTop: '32px',
         maxWidth: '300px',
     },
     button: {
-        color: '#9b9e9f',
+        color: 'white',
         backgroundColor: 'none',
         borderColor: 'white',
         whiteSpace: 'nowrap',
-        transition: "all 5s ease",
-        margin: '10px',
-        "& :hover": {
-        color: 'white'
+        transition: "all .3s ease",
+        margin: '16px',
+        "&:hover": {
+            textShadow: '1px 1px 7px #000',
+            backgroundColor: '#181b1c',
+            color: 'white',
+            boxShadow: 'inset 1px 1px 7px #000',
         }
+    },
+    Link: {
+        textDecoration: 'none'
     }
 }

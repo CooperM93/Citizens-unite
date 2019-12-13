@@ -19,7 +19,7 @@ function TitleBar(props) {
                     </Transition>
                 </CSSTransition>
             }
-            {page === 'discussion' &&
+            {page === 'discussions' &&
                 <CSSTransition key={1} classNames="item" timeout={500}>
                     <Transition>
                         <div className={classes.disTitleBox}>

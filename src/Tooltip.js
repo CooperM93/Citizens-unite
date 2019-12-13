@@ -4,7 +4,7 @@ import styles from './styles/TooltipStyles'
 
 //TODO fix tooltip positioning to center on progress bar end
 function Tooltip(props) {
-    const { children, position, classes, raised, goal } = props;
+    const { classes, raised, goal } = props;
     return (
         <div className={classes.referencePoint}>
 

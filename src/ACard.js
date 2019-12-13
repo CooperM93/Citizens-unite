@@ -117,7 +117,7 @@ class ACard extends React.Component {
       expanded
     } = this.state
     const dateCreated = Date(created);
-    const weekdaydayCreated = dateCreated.slice(0,3);
+    //const weekdaydayCreated = dateCreated.slice(0,3);
     const monthCreated = dateCreated.slice(4,7);
     const dayCreated = dateCreated.slice(8,10);
     const yearCreated = dateCreated.slice(11, 15);

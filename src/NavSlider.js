@@ -24,8 +24,8 @@ export default function NavSlider(props) {
         className={classes.root}
     >   
         <BottomNavigationAction 
-            label="Discussion" 
-            value="discussion" 
+            label="Discussions" 
+            value="discussions" 
             classes={{ 
                 root: classes.icon, 
                 selected: classes.selected 
