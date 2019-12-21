@@ -6,11 +6,13 @@ export default {
         padding: '32px',
     },
     title: {
-        fontWeight: '500',
+        fontWeight: '700',
         fontSize: 'calc(5vw + 30px)',
         paddingBottom: '32px',
     },
     subheader: {
+        fontWeight: '500',
+        fontSize: '18px',
         marginBottom: '32px',
         maxWidth: '1000px',
         width: '80%'
@@ -38,6 +40,10 @@ export default {
         [sizes.up("xs")]: {
             width: '80%',
         }
+    },
+    sectionBodyHeader: {
+        fontWeight: 600,
+        fontSize: '20px'
     },
     section: {
         display: 'flex',
@@ -80,7 +86,8 @@ export default {
         [sizes.down("md")]: {
             maxWidth: '325px',
         },
-        maxWidth: '525px'
+        maxWidth: '525px',
+        fontWeight: 500,
     },
     sectionBodyUnder: {
         [sizes.up("xs")]: {
@@ -88,6 +95,7 @@ export default {
         },
         marginTop: '32px',
         maxWidth: '300px',
+        fontWeight: 500,
     },
     button: {
         color: 'white',
